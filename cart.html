@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart — PawSafe Den</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#content" class="skip-link">Skip to content</a>
+
+<header>
+  <div class="topbar container">
+    <span class="promo">Free shipping on orders over ₹2,000 &bull; Safe materials &bull; 1-year warranty</span>
+    <div>
+      <a href="cart.html" class="cart-btn" aria-label="Cart">🛒 <span id="cart-count" class="cart-count">0</span></a>
+    </div>
+  </div>
+  <div class="navbar container">
+    <a href="index.html" class="logo"><div class="mark">P</div><span>PawSafe Den</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="cart.html" class="active">Cart</a>
+    </nav>
+    <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<nav class="nav-drawer" id="nav-drawer">
+  <div class="drawer-header"><strong>PawSafe Den</strong><button class="close-btn" aria-label="Close menu">✕</button></div>
+  <a href="index.html">Home</a>
+  <a href="product.html">Product</a>
+  <a href="cart.html">Cart</a>
+</nav>
+
+<main id="content">
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Your cart</h2>
+      <p class="section-subtitle">Review your order before checkout.</p>
+
+      <div class="grid" style="grid-template-columns: 1fr; gap:24px; align-items:start;">
+        <div>
+          <div id="empty-cart" class="empty-cart" style="display:none;">
+            <div class="icon">🛒</div>
+            <p>Your cart is empty.</p>
+            <a href="product.html" class="btn btn-primary">Start shopping</a>
+          </div>
+
+          <div id="cart-items"></div>
+        </div>
+
+        <div id="cart-summary" class="cart-summary" style="display:none;">
+          <h3 style="font-size:1.1rem; margin-bottom:14px; color:var(--brand-dark);">Order summary</h3>
+          <div class="summary-row"><span>Subtotal</span><span id="cart-total">₹0.00</span></div>
+          <div class="summary-row"><span>Shipping</span><span>Free</span></div>
+          <div class="summary-row total"><span>Total</span><span id="cart-total-final">₹0.00</span></div>
+          <button class="btn btn-primary btn-checkout" id="go-checkout">Proceed to checkout</button>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-top:12px; text-align:center;">Secure payment &bull; 1-year warranty</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><div class="mark">P</div><span>PawSafe Den</span></a>
+        <p>Keeping dogs happily engaged while their humans are away.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 PawSafe Den.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById("go-checkout").addEventListener("click", () => {
+  if (cart.length === 0) return;
+  location.href = "checkout.html";
+});
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>

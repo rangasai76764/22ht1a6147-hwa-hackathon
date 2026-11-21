@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PawSafe Den — Product Details</title>
+<meta name="description" content="PawSafe Den product page: features, benefits, images, pricing, reviews and interactive options.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a href="#content" class="skip-link">Skip to content</a>
+
+<header>
+  <div class="topbar container">
+    <span class="promo">Free shipping on orders over ₹2,000 &bull; Safe materials &bull; 1-year warranty</span>
+    <div>
+      <a href="cart.html" class="cart-btn" aria-label="Cart">🛒 <span id="cart-count" class="cart-count">0</span></a>
+    </div>
+  </div>
+  <div class="navbar container">
+    <a href="index.html" class="logo"><div class="mark">P</div><span>PawSafe Den</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html" class="active">Product</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+    <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<nav class="nav-drawer" id="nav-drawer">
+  <div class="drawer-header">
+    <strong>PawSafe Den</strong>
+    <button class="close-btn" aria-label="Close menu">✕</button>
+  </div>
+  <a href="index.html">Home</a>
+  <a href="product.html">Product</a>
+  <a href="cart.html">Cart</a>
+</nav>
+
+<main id="content">
+  <section class="product-page">
+    <div class="product-banner">
+      <span class="badge">New &bull; Vet-reviewed design</span>
+      <h2>PawSafe Den</h2>
+      <p>The all-day dog activity station that keeps your dog happily engaged while you are away &mdash; smell, puzzle, movement, rewards and exploration in one safe station.</p>
+    </div>
+
+    <div class="container">
+      <div class="product-layout">
+        <div class="product-left">
+          <div class="gallery">
+            <div class="gallery-main" id="main-img">🦴</div>
+            <div class="gallery-thumbs">
+              <div class="thumb selected" onclick="setThumb(this, '🦴')">🦴</div>
+              <div class="thumb" onclick="setThumb(this, '🧩')">🧩</div>
+              <div class="thumb" onclick="setThumb(this, '🍖')">🍖</div>
+              <div class="thumb" onclick="setThumb(this, '🏃')">🏃</div>
+            </div>
+          </div>
+
+          <div class="price-row">
+            <span class="price" id="product-price">₹89.00</span>
+            <span class="old-price" id="old-price">₹99.00</span>
+          </div>
+
+          <div class="qty-selector">
+            <label>Quantity</label>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="appChangeQtyCart(-1)">−</button>
+              <span class="qty-val" id="qty-val">1</span>
+              <button class="qty-btn" onclick="appChangeQtyCart(1)">+</button>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" id="add-to-cart">Add to cart</button>
+          <div class="notify" id="stock-notify">In stock &bull; Ships in 1&ndash;2 days</div>
+        </div>
+
+        <div class="product-right">
+          <h3>Configure your station</h3>
+          <div id="options-container"></div>
+
+          <div class="card" style="margin-top:20px;">
+            <h3 style="margin-bottom:10px; font-size:1rem; text-transform:uppercase; letter-spacing:1px;">Why it&rsquo;s safe</h3>
+            <ul style="font-size:0.9rem; color:var(--text-muted); line-height:1.8; padding-left:18px;">
+              <li>No choking hazards &mdash; parts too large to swallow</li>
+              <li>No overheating &mdash; auto thermal shutoff</li>
+              <li>No sharp edges &mdash; fully rounded</li>
+              <li>BPA-free, chew-proof materials</li>
+              <li>Dishwasher-safe removable tray</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <section class="section" style="padding-top:10px;">
+        <div class="container">
+          <h2 class="section-title">Features</h2>
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top:24px;">
+            <div class="card">
+              <div class="card-icon">👃</div>
+              <h3>Scent chambers</h3>
+              <p>Hidden smell puzzles engage nose work for hours.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🧩</div>
+              <h3>Puzzle solving</h3>
+              <p>Sliding dials, flip covers and rotating maze.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🏃</div>
+              <h3>Motorized movement</h3>
+              <p>Auto on/off rolling treat ball for physical play.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🍖</div>
+              <h3>Treat rewards</h3>
+              <p>Slow-release dispensing rewards completion.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🔍</div>
+              <h3>Exploration</h3>
+              <p>Hidden compartments invite discovery.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🛡️</div>
+              <h3>Safety first</h3>
+              <p>Chew-proof, BPA-free, no choking or overheating risk.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits -->
+      <section class="section" style="background:#fff;">
+        <div class="container">
+          <h2 class="section-title">Benefits</h2>
+          <div class="benefits-grid">
+            <div class="card">
+              <div class="card-icon">⏱️</div>
+              <h3>Long-lasting engagement</h3>
+              <p>Keeps dogs busy 4&ndash;8 hours &mdash; no activity finishes in 20 minutes.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">😌</div>
+              <h3>Less anxiety</h3>
+              <p>Reduces separation anxiety and destructive chewing.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🐕</div>
+              <h3>Every dog type</h3>
+              <p>Small, medium, large &bull; puppies vs adults &bull; low vs high energy.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🧼</div>
+              <h3>Easy to clean</h3>
+              <p>Dishwasher-safe removable tray.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reviews -->
+      <section class="section">
+        <div class="container">
+          <div class="reviews">
+            <h2 class="section-title" style="text-align:left;">Customer reviews</h2>
+            <div style="font-size:0.9rem; color:var(--text-muted); margin-bottom:20px;">★ 4.9 / 5 (128 reviews)</div>
+            <div id="reviews-list"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><div class="mark">P</div><span>PawSafe Den</span></a>
+        <p>Keeping dogs happily engaged while their humans are away.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Safety</h4>
+        <a href="#">No choking hazards</a>
+        <a href="#">BPA-free materials</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 PawSafe Den.</div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+function setThumb(el, emoji) {
+  document.querySelectorAll(".thumb").forEach(t => t.classList.remove("selected"));
+  el.classList.add("selected");
+  document.getElementById("main-img").textContent = emoji;
+}
+
+let qtyVal = 1;
+function appChangeQtyCart(delta) {
+  qtyVal = Math.max(1, qtyVal + delta);
+  document.getElementById("qty-val").textContent = qtyVal;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("options-container");
+  let html = "";
+  [
+    { label: "Size", items: PRODUCT.sizes.map(s => ({ label: s.label, desc: s.desc, delta: s.priceDelta })) },
+    { label: "Mode", items: PRODUCT.modes.map(m => ({ label: m.label, desc: m.desc, delta: 0 })) },
+    { label: "Energy", items: PRODUCT.energy.map(e => ({ label: e.label, desc: e.desc, delta: 0 })) }
+  ].forEach(group => {
+    html += `<div style="margin-bottom:16px;"><div style="font-weight:700; font-size:0.88rem; color:var(--brand-dark); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px;">${group.label}</div><div class="size-options">`;
+    group.items.forEach((it, i) => {
+      html += `<button class="size-pill${i === 0 ? " selected" : ""}" data-group="${group.label}" data-value="${it.label}">${it.label}${it.delta > 0 ? " +₹" + it.delta : ""}</button>`;
+    });
+    html += `</div></div>`;
+  });
+  container.innerHTML = html;
+
+  document.querySelectorAll("#options-container .size-pill").forEach(p => {
+    p.addEventListener("click", () => {
+      const group = p.dataset.group;
+      document.querySelectorAll(`#options-container [data-group="${group}"]`).forEach(x => x.classList.remove("selected"));
+      p.classList.add("selected");
+      if (group === "Size") selSize = p.dataset.value;
+      if (group === "Mode") selMode = p.dataset.value;
+      if (group === "Energy") selEnergy = p.dataset.value;
+      const size = PRODUCT.sizes.find(s => s.label === selSize);
+      const price = PRODUCT.basePrice + (size ? size.priceDelta : 0);
+      window._currentPrice = price;
+      document.getElementById("product-price").textContent = "₹" + price.toFixed(2);
+      document.getElementById("old-price").textContent = "₹" + (price + 10).toFixed(2);
+    });
+  });
+
+  const reviews = PRODUCT.reviews;
+  const list = document.getElementById("reviews-list");
+  list.innerHTML = reviews.map(r => `
+    <div class="review-item">
+      <div class="review-avatar">${r.name.charAt(0)}</div>
+      <div class="review-content">
+        <div class="review-meta">${r.name} &bull; Verified buyer</div>
+        <div class="review-stars">${"★".repeat(r.stars)}${"☆".repeat(5-r.stars)}</div>
+        <div class="review-text">${r.text}</div>
+      </div>
+    </div>
+  `).join("");
+});
+</script>
+</body>
+</html>
