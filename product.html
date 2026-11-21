@@ -46,7 +46,6 @@
 
   <div class="container">
     <div class="product-layout reveal">
-      <!-- Left: gallery -->
       <div class="gallery-wrap">
         <div class="gallery-main">
           <div class="station">
@@ -74,7 +73,6 @@
         </div>
       </div>
 
-      <!-- Right: options + price -->
       <div class="product-meta">
         <div class="price-row">
           <span class="price" id="product-price">₹89.00</span>
@@ -116,7 +114,6 @@
     </div>
   </div>
 
-  <!-- Specifications -->
   <section class="section section-sm reveal">
     <div class="container">
       <div class="section-head">
@@ -125,17 +122,16 @@
         <p>Everything that goes into the PawSafe Den.</p>
       </div>
       <table class="specs-table">
-        <tr><td>Materials</td><td>${PRODUCT_MATERIALS}</td></tr>
-        <tr><td>Weight</td><td>${PRODUCT_SPECS_WEIGHT}</td></tr>
-        <tr><td>Power</td><td>${PRODUCT_SPECS_POWER}</td></tr>
-        <tr><td>Compartments</td><td>${PRODUCT_SPECS_COMPARTMENTS}</td></tr>
-        <tr><td>Safety</td><td>${PRODUCT_SPECS_SAFETY}</td></tr>
-        <tr><td>Cleaning</td><td>${PRODUCT_SPECS_CLEANING}</td></tr>
+        <tr><td>Materials</td><td id="spec-materials"></td></tr>
+        <tr><td>Weight</td><td id="spec-weight"></td></tr>
+        <tr><td>Power</td><td id="spec-power"></td></tr>
+        <tr><td>Compartments</td><td id="spec-compartments"></td></tr>
+        <tr><td>Safety</td><td id="spec-safety"></td></tr>
+        <tr><td>Cleaning</td><td id="spec-cleaning"></td></tr>
       </table>
     </div>
   </section>
 
-  <!-- What's included -->
   <section class="section section-sm reveal" style="background:var(--paper);">
     <div class="container">
       <div class="section-head">
@@ -143,13 +139,10 @@
         <h2>What&rsquo;s included</h2>
         <p>Everything you need to start, straight out of the box.</p>
       </div>
-      <div class="included-grid">
-        ${PRODUCT_INCLUDED_HTML}
-      </div>
+      <div class="included-grid" id="included-list"></div>
     </div>
   </section>
 
-  <!-- Usage & care -->
   <section class="section section-sm reveal">
     <div class="container">
       <div class="instructions">
@@ -157,25 +150,20 @@
           <div class="num">1</div>
           <div>
             <h4>How to use</h4>
-            <ol style="padding-left:18px;color:var(--muted);font-size:0.94rem;line-height:1.8;margin-top:6px;">
-              ${PRODUCT_USAGE_HTML}
-            </ol>
+            <ol id="usage-list" style="padding-left:18px;color:var(--muted);font-size:0.94rem;line-height:1.8;margin-top:6px;"></ol>
           </div>
         </div>
         <div class="instruction-step reveal">
           <div class="num">2</div>
           <div>
             <h4>Care instructions</h4>
-            <ol style="padding-left:18px;color:var(--muted);font-size:0.94rem;line-height:1.8;margin-top:6px;">
-              ${PRODUCT_CARE_HTML}
-            </ol>
+            <ol id="care-list" style="padding-left:18px;color:var(--muted);font-size:0.94rem;line-height:1.8;margin-top:6px;"></ol>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Pricing -->
   <section class="section section-sm reveal">
     <div class="container">
       <div class="pricing-card reveal">
@@ -183,13 +171,13 @@
         <h2 style="font-size:1.5rem;margin-bottom:16px;">Pricing</h2>
         <div class="pricing-row"><span>PawSafe Den &mdash; Small</span><span id="price-small">₹89.00</span></div>
         <div class="pricing-row"><span>PawSafe Den &mdash; Medium</span><span id="price-medium">₹101.00</span></div>
-        <div class="pricing-row"><span>PawSafe Den &mdash; Large</span><span id="price-large">₹113.00</span></div>
+        <div class="pricing-row"><span>PawSafe Den &mdash; Big</span><span id="price-big">₹110.00</span></div>
+        <div class="pricing-row"><span>PawSafe Den &mdash; Large</span><span id="price-large">₹120.00</span></div>
         <div class="pricing-row total"><span>Your selection</span><span id="price-selection">₹89.00</span></div>
       </div>
     </div>
   </section>
 
-  <!-- Reviews -->
   <section class="section section-sm reveal">
     <div class="container">
       <div class="reviews-wrap">
@@ -242,33 +230,24 @@ function setThumb(el) {
   el.classList.add("selected");
 }
 
-const PRODUCT_MATERIALS = PRODUCT.materials;
-const PRODUCT_SPECS_WEIGHT = PRODUCT.specs.weight;
-const PRODUCT_SPECS_POWER = PRODUCT.specs.power;
-const PRODUCT_SPECS_COMPARTMENTS = PRODUCT.specs.compartments;
-const PRODUCT_SPECS_SAFETY = PRODUCT.specs.safety;
-const PRODUCT_SPECS_CLEANING = PRODUCT.specs.cleaning;
+document.getElementById("spec-materials").textContent = PRODUCT.materials;
+document.getElementById("spec-weight").textContent = PRODUCT.specs.weight;
+document.getElementById("spec-power").textContent = PRODUCT.specs.power;
+document.getElementById("spec-compartments").textContent = PRODUCT.specs.compartments;
+document.getElementById("spec-safety").textContent = PRODUCT.specs.safety;
+document.getElementById("spec-cleaning").textContent = PRODUCT.specs.cleaning;
 
-const PRODUCT_INCLUDED_HTML = PRODUCT.included.map(it => `
+document.getElementById("included-list").innerHTML = PRODUCT.included.map(it => `
   <div class="included-item">
     <span class="qty">${it.qty}</span><span>${it.item}</span>
   </div>
 `).join("");
 
-const PRODUCT_USAGE_HTML = PRODUCT.usage.map(u => `<li>${u}</li>`).join("");
-const PRODUCT_CARE_HTML = PRODUCT.care.map(c => `<li>${c}</li>`).join("");
-
-// Keep price selection in sync with chosen size
-const selEl = document.getElementById("price-selection");
-const origRefresh = refreshPrice;
-refreshPrice = function() {
-  origRefresh();
-  if (selEl) selEl.textContent = formatMoney(currentPrice());
-};
+document.getElementById("usage-list").innerHTML = PRODUCT.usage.map(u => `<li>${u}</li>`).join("");
+document.getElementById("care-list").innerHTML = PRODUCT.care.map(c => `<li>${c}</li>`).join("");
 
 const reviews = PRODUCT.reviews;
-const list = document.getElementById("reviews-list");
-list.innerHTML = reviews.map(r => `
+document.getElementById("reviews-list").innerHTML = reviews.map(r => `
   <div class="review-item">
     <div class="review-avatar">${r.name.charAt(0)}</div>
     <div class="review-content">
